@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/header'
+import Footer from './components/footer'
+import Group from './components/group'
+
+import './App.css'
 
 function App() {
+  
+  const groups = [
+    'Not Started',
+    'In Progress',
+    'Completed'
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header name="Lokesh" fanOf="shakira" />
+        <div className="groups">
+          {
+            // (a, b) => (a+b)
+            //map function takes each element of an array or object and returns something from it
+            groups.map((group) => (
+              <Group name={group} />
+            ))
+          }
+        </div>
     </div>
   );
 }
 
-export default App;
+export default App
