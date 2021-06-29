@@ -33,7 +33,7 @@ function App() {
             group: 'Completed'
         },
         {
-            name: 'Stop!!!',
+            name: 'Stop!!',
             group: 'Not Started'
         },
         {
