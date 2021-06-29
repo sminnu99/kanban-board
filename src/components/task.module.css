@@ -1,15 +1,47 @@
 .container {
-    background: #ffffff44;
+    /* background: #ffffff44; */
+    /* background-color: #2a9d8fdd; */
+    background-color: #ffffff11;
+    backdrop-filter: blur(10px);
     width: 95%;
     height: 50px;
     margin-top: 10px;
     display: flex;
     align-items: center;
     padding: 0 20px;
+    border-radius: 5px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.container:hover {
+    background-color: #ffffff88;
+    
 }
 
 .content{
+    /* background: red; */
+    width: 100%;
     font-size: 1.4rem;
-    color: white;
+    color: black;
+    display: flex;
+}
 
+.name {
+    /* background: blue; */
+    flex-grow: 1;
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    /* border: none; */
+    border: 3px solid hotpink;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.icon:hover {
+    background-color: hotpink;
 }

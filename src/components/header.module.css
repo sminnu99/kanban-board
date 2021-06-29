@@ -1,7 +1,17 @@
 .container {
-    width: 100%;
+    width: 95%;
+    position: relative;
+    /* left: 2.5%; */
+    left: 50%;
+    transform: translateX(-50%);
     height: 30vh;
-    background: #e76f51;
+    /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlpuPdlBR-i5mp8tBpdeJdV1JlnCgSOPuEdYfIcRDzPVADrNDiPE6tfP_WPvByxCYAFHM&usqp=CAU');
+    background-size: cover; */
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    margin-top: 20px;
+    border-radius: 10px;
+    /* backdrop-filter: blur(30px); */
     display: grid;
     place-items: center;
 }

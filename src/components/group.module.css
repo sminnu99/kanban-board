@@ -1,18 +1,26 @@
 .container {
     width: 100%;
     min-height: 60vh;
-    background: #2a9d8f;
+    /* background: #2a9d8f; */
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
     margin: 20px 30px;
+    border-radius: 5px;
+
     /* overflow-y: scroll; */
 }
 
 .title {
     height: 3.6rem;
-    background: white;
+    /* background: white; */
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
     text-align: center;
     display: grid;
     place-items: center;
     font-size: 1.7rem;
+    border-radius: 5px;
+
 }
 
 .content {

@@ -4,7 +4,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: #264653;
+  /* background: #264653; */
+  /* background-image: url('https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png'); */
+  background-image: url('https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80');
+  /* background-image: url('https://images.unsplash.com/photo-1607355298884-7663019fa61e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=340&q=80'); */
+  background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -12,6 +17,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+*::selection {
+  background: #ffffff55;
 }
 
 code {

@@ -2,6 +2,14 @@ import Task from './Task'
 
 import styles from './group.module.css'
 
+const sendToInProgress = (task) => {
+    task.group = 'In Progress'
+}
+
+const sendToCompleted = (task) => {
+    task.group = 'Completed'
+}
+
 function Group({name, tasks}) {
     return (
             <div className={styles.container}>
@@ -11,7 +19,7 @@ function Group({name, tasks}) {
                 <div className={styles.content}>
                     {
                         tasks.map(task => (
-                            <Task name={task.name} />
+                            <Task name={task.name} action={name == 'Not Started' ? sendToInProgress(task) : sendToCompleted(task) } />
                         ))
                     }
                 </div>
