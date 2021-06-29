@@ -19,7 +19,7 @@ function Group({name, tasks}) {
                 <div className={styles.content}>
                     {
                         tasks.map(task => (
-                            <Task name={task.name} action={name == 'Not Started' ? sendToInProgress(task) : sendToCompleted(task) } />
+                            <Task name={task.name} action={name === 'Not Started' ? sendToInProgress(task) : sendToCompleted(task) } />
                         ))
                     }
                 </div>
