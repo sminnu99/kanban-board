@@ -1,16 +1,46 @@
+import {useState, useContext} from 'react'
+
+import {taskContext} from '../context/taskContext'
 import Task from './Task'
 
 import styles from './group.module.css'
 
-const sendToInProgress = (task) => {
-    task.group = 'In Progress'
-}
+function Group({name}) {
 
-const sendToCompleted = (task) => {
-    task.group = 'Completed'
-}
+    const [tasks, setTasks] = useContext(taskContext)
+    
+    const [taskName, setTaskName] = useState('')
+    
+    const handleChange = () => {
+        console.log(1)
+    }
 
-function Group({name, tasks}) {
+    const addTask = () => {
+        
+        const newTask = {
+            name: taskName,
+            group: name
+        }
+
+        const newTasks = [...tasks]
+        newTasks.push(newTask)
+        setTasks(newTasks)
+
+        const input = document.createElement('input')
+        document.body.appendChild(input)
+        input.setAttribute('id', 'invisible-input')
+        input.focus()
+
+        // console.log(input)
+
+        input.onchange = handleChange
+
+    }
+
+    let groupTasks = [...tasks]
+
+    groupTasks = tasks.filter(task => task.group === name) 
+
     return (
             <div className={styles.container}>
                 <div className={styles.title}>
@@ -18,12 +48,12 @@ function Group({name, tasks}) {
                 </div>
                 <div className={styles.content}>
                     {
-                        tasks.map(task => (
-                            <Task name={task.name} action={name === 'Not Started' ? sendToInProgress(task) : sendToCompleted(task) } />
+                        groupTasks.map(task => (
+                            <Task task={task} />
                         ))
                     }
                 </div>
-                <button>Add +</button>
+                <button onClick={addTask}>Add +</button>
 
             </div>
 

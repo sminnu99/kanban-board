@@ -1,6 +1,4 @@
-
 import styles from './header.module.css'
-
 
 function Header({ name, fanOf }) {
 
