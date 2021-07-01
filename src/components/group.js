@@ -2,6 +2,7 @@ import {useState, useContext} from 'react'
 
 import {taskContext} from '../context/taskContext'
 import Task from './Task'
+import Input from './input'
 
 import styles from './group.module.css'
 
@@ -15,27 +16,27 @@ function Group({name}) {
         console.log(1)
     }
 
-    const addTask = () => {
-        
-        const newTask = {
-            name: taskName,
-            group: name
-        }
+    // const addTask = (e) => {
+    //     e.preventDefault()        
+    //     const newTask = {
+    //         name: taskName,
+    //         group: name
+    //     }
 
-        const newTasks = [...tasks]
-        newTasks.push(newTask)
-        setTasks(newTasks)
+    //     const newTasks = [...tasks]
+    //     newTasks.push(newTask)
+    //     setTasks(newTasks)
 
-        const input = document.createElement('input')
-        document.body.appendChild(input)
-        input.setAttribute('id', 'invisible-input')
-        input.focus()
+    //     const input = document.createElement('input')
+    //     document.body.appendChild(input)
+    //     input.setAttribute('id', 'invisible-input')
+    //     input.focus()
 
-        // console.log(input)
+    //     // console.log(input)
 
-        input.onchange = handleChange
+    //     input.onchange = handleChange
 
-    }
+    // }
 
     let groupTasks = [...tasks]
 
@@ -46,6 +47,7 @@ function Group({name}) {
                 <div className={styles.title}>
                     {name}
                 </div>
+                <Input group={name} />
                 <div className={styles.content}>
                     {
                         groupTasks.map(task => (
@@ -53,8 +55,6 @@ function Group({name}) {
                         ))
                     }
                 </div>
-                <button onClick={addTask}>Add +</button>
-
             </div>
 
     )
