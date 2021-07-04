@@ -30,7 +30,7 @@ function App() {
     const [tasks, setTasks] = useState(
             getLocalItems());
 
-    const click= () =>{
+    const click= () =>{   
         localStorage.removeItem('lists')
         setTasks([])
     }        
@@ -52,7 +52,7 @@ function App() {
                     ))
                 }
             </div>
-            <button onClick={click} className="save__button">Reset</button>
+            <button onClick={click} className="glow-on-hover">Reset</button>
         </div>
         </taskContext.Provider>
     );
