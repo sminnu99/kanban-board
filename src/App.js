@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 
 import Header from './components/header'
 import Group from './components/group'
@@ -9,47 +9,35 @@ import './App.css'
 
 function App() {
 
+    const getLocalItems = () =>{
+        let list = localStorage.getItem('lists');
+        console.log(list);
+
+        if(list){
+            return JSON.parse(localStorage.getItem('lists'));
+        }
+        else{
+            return [];
+        }
+    }
+
     const groups = [
         'Not Started',
         'In Progress',
         'Completed'
     ]
 
-    const [tasks, setTasks] = useState( [
-        {
-            name: 'Code',
-            group: 'In Progress'
-        },
-        {
-            name: 'Watch Shakira',
-            group: 'Completed'
-        },
-        {
-            name: 'Code More',
-            group: 'Not Started'
-        },
-        {
-            name: 'Sleep',
-            group: 'Not Started'
-        },
-        {
-            name: 'Scream for no reason',
-            group: 'Completed'
-        },
-        {
-            name: 'Stop!!',
-            group: 'Not Started'
-        },
-        {
-            name: 'Jump from balcony',
-            group: 'In Progress'
-        },
-        {
-            name: 'Listen to music',
-            group: 'In Progress'
-        },
-        
-    ])
+    const [tasks, setTasks] = useState(
+            getLocalItems());
+
+    const click= () =>{
+        localStorage.removeItem('lists')
+        setTasks([])
+    }        
+
+    useEffect(() => {
+        localStorage.setItem('lists',JSON.stringify(tasks))
+    }, [tasks])
 
     return (
         <taskContext.Provider value={[tasks, setTasks]}>
@@ -64,6 +52,7 @@ function App() {
                     ))
                 }
             </div>
+            <button onClick={click} className="save__button">Reset</button>
         </div>
         </taskContext.Provider>
     );
