@@ -15,4 +15,4 @@ A basic kanban board made using:
 
 ### Authors
 
-Made by: **Manish Kumar Das** and **Lokesh Karri**
+Made by: **Manish Kumar Das** and **Lokesh Karri** and **B V Sahith**
